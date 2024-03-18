@@ -25,3 +25,25 @@ for (let i = 0; i < days.length; i++) {
 for (let i = days.length-1; i >=0; i--) {
     console.log(days[i])
 }
+
+// while loops
+
+let count = 0;
+while(count < 10) {
+    count++;
+    console.log(count)
+}
+
+// for of loops
+
+const subreddits = ['cringe', 'books', 'anime', 'funny', 'pics']
+
+for (sub of subreddits) {
+    console.log(sub);
+}
+
+// can use this to very easily iterate through strings and arrays
+
+// actual object literals can't be looped through witha for of loop
+// use a for in loop to loop through object literals
+
