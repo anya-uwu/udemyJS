@@ -35,3 +35,22 @@ const rollDie = () => (
 
 // this also works for short things
 const subtract = (a, b) => a - b
+
+// filter
+// filters and returns new array based on condition
+
+// this function filters all numbers that aren't 4
+numberArray.filter(n => {
+    return n === 4
+})
+
+// every and some
+
+numberArray.every(number => number > 0)
+// return true
+// as soon as one returns false the whole statement is some
+
+numberArray.some(number => number > 5)
+// returns true as long as one thing follows the rule
+
+// reduce
