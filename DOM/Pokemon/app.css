@@ -1,3 +1,11 @@
+div {
+    display: inline-block;
+}
+
+p {
+    text-align: center;
+}
+
 .pokemon {
     display: inline-block;
     text-align: center;
