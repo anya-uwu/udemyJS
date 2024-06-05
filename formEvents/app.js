@@ -12,5 +12,18 @@ form.addEventListener('submit', function (e) {
     input.value = '';
 });
 
+const h1 = document.querySelector('h1');
 
+// change event
+// when the user leaves the text box and clicks elsewhere on the page the event happens
+input.addEventListener('change', function (e) {
+    console.log("hjfwehfb")
+});
 
+// input event
+// when the input changes
+input.addEventListener('input', function (e) {
+    console.log("dfgsdg")
+    // updating h1 to be what someone is typing in the input
+    h1.innerText = input.value
+});
