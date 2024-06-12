@@ -55,15 +55,38 @@
 
 // async axios
 
-const getPerson = async () => {
+// const getPerson = async () => {
+//     try {
+//     const res = await axios.get("https://swapi.dev/api/people/1/");
+//     console.log(res.data)
+//     } catch(e) {
+//         console.log("error", e);
+//     }
+// };
+
+// getPerson();
+
+// Headers with Axios
+
+const jokes = document.querySelector('#jokes');
+const button = document.querySelector('button');
+
+
+const addNewJoke = async () => {
+    const jokeText = await getDadJoke()
+    const newLI = document.createElement('li');
+    newLI.append(jokeText);
+    jokes.append(newLI);
+}
+
+const getDadJoke = async () => {
     try {
-    const res = await axios.get("https://swapi.dev/api/people/1/");
-    console.log(res.data)
-    } catch(e) {
-        console.log("error", e);
-    }
-};
+        const config = { headers: { Accept: 'application/json' } }
+        const res = await axios.get("https://icanhazdadjoke.com/", config);
+        return res.data.joke;
+    } catch (e) {
+        return "no jokes available sorry"
+    }   
+}
 
-getPerson();
-
-
+button.addEventListener('click', addNewJoke);
