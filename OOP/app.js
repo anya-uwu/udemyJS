@@ -45,3 +45,70 @@
 // const color1 = new Color(255, 4, 60);
 
 // new class syntax
+
+class Color {
+    // executes when new color is created
+    constructor(r, g, b, name) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.name = name;
+    }
+    innerRGB() {
+        const { r, g, b } = this;
+        return `rgb(${r}, ${b}, ${g})`;
+    }
+
+    rgb() {
+        return `rgb(${this.innerRGB()})`;
+    }
+
+    rgba() {
+        return `rgba(${this.innerRGB()}, ${a})`;
+    }
+
+    hex() {
+        const { r, g, b } = this;
+        return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+
+}
+
+const c1 = new Color(230, 108, 3, 'tangerine');
+
+// Extends and Super Keywords
+
+class Pet {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    eat() {
+        return `${this.name} is eating`;
+    }
+
+}
+
+class Cat extends Pet {
+    constructor(name, age, livesLeft = 9) {
+        // super lets us reuse the constructor to add unique elements to this child
+        // super reference to super class
+        super(name, age);
+        this.livesLeft = livesLeft
+
+    }
+    meow() {
+        return 'meow';
+    }
+}
+
+class Dog extends Pet {
+    woof() {
+        return 'woof';
+    }
+}
+
+const jambo = new Cat('Jambo', 3);
+console.log(jambo);
+console.log(jambo.name);
+console.log(jambo.meow());
